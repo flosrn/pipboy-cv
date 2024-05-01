@@ -8,10 +8,26 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: "#18dc0c",
+        secondary: "#11291b",
+      },
+      keyframes: {
+        wave: {
+          "0%": { boxShadow: "0 -10vh 20vh #0c0", top: "-100vh" },
+          "48%,52%": { boxShadow: "0 -10vh 20vh #090" },
+          "50%": { boxShadow: "0 -10vh 20vh #060" },
+          "100%": { boxShadow: "0 -10vh 20vh #0c0", top: "200vh" },
+        },
+        "color-pulse": {
+          "0%,100%": { color: "#0c0" },
+          "48%,52%": { color: "#090" },
+          "50%": { color: "#060" },
+        },
+      },
+      animation: {
+        wave: "wave 10s infinite ease-in-out",
+        "color-pulse": "color-pulse 5s infinite ease-in-out",
       },
     },
   },

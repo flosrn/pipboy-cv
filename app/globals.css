@@ -2,32 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .pipboy-screen {
+    /*background-image: radial-gradient(#313630, #111);*/
+    background: #222222;
+    @apply animate-color-pulse;
   }
+
+  .pipboy-screen::before {
+    content: "";
+    height: 20vh;
+    left: 0;
+    opacity: .5;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    @apply animate-wave;
+    pointer-events: none;
+  }
+
+
+  .pipboy-screen::after {
+    background-image: linear-gradient(transparent, transparent 3px, #222);
+    background-size: 4px 4px;
+    opacity: .2;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .pipboy-screen-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 5vmin 1vmin #000 inset;
+    pointer-events: none;
+  }
+
+  .pipboy-nav::before {
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    display: block;
+    content: '';
+    width: 2px;
+    height: 12px;
+    background: linear-gradient(rgba(51, 255, 0, .8), transparent);
+  }
+
+  .pipboy-nav::after {
+    position: absolute;
+    left: auto;
+    right: 0;
+    bottom: -12px;
+    display: block;
+    content: '';
+    width: 2px;
+    height: 12px;
+    background: linear-gradient(rgba(51, 255, 0, .8), transparent);
+  }
+
+  .pipboy-nav-menu-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 15px;
+    top: 11px;
+    border-color: #18dc0c;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+  }
+
 }
