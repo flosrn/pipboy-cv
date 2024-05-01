@@ -6,7 +6,7 @@
   .pipboy-screen {
     /*background-image: radial-gradient(#313630, #111);*/
     background: #222222;
-    @apply animate-color-pulse;
+    /*@apply animate-color-pulse;*/
   }
 
   .pipboy-screen::before {

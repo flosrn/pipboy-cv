@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { Fira_Mono } from "next/font/google";
-
-import "./globals.css";
-
 import Image from "next/image";
-import Link from "next/link";
 
 import { NavMenu } from "@/components/nav-menu";
+
+import "./globals.css";
 
 const firaMono = Fira_Mono({
   weight: ["400", "500", "700"],
