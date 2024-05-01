@@ -24,7 +24,7 @@ export const NavSubMenu = () => {
   });
 
   return (
-    <div className="embla">
+    <div className="embla px-14">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container space-x-2">
           {SUB_LINKS.map(({ href, label }, index) => {

@@ -37,7 +37,7 @@ export default function RootLayout({
 
           <div className="text-primary pipboy-screen absolute left-0 top-[125px] z-10 mr-3 mt-20 flex h-[350px] w-[395px] flex-col overflow-hidden lg:left-auto lg:h-[400px] xl:w-[500px]">
             <NavMenu />
-            <div className="text-primary relative px-14">{children}</div>
+            <div className="text-primary relative">{children}</div>
             <div className="pipboy-screen-shadow" />
           </div>
         </div>
