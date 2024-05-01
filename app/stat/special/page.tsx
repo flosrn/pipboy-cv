@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import useSound from "use-sound";
 
@@ -71,6 +71,27 @@ export default function SpecialPage() {
   const [active, setActive] = useState(special[0].id);
   const [play] = useSound(pipboyFavoriteMenu);
   const activeItem = special.find((item) => item.id === active);
+  const currentIndex = special.findIndex((item) => item.id === active);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const nextIndex = currentIndex + 1;
+      const prevIndex = currentIndex - 1;
+
+      if (event.key === "ArrowDown" && nextIndex < special.length) {
+        setActive(special[nextIndex].id);
+        play();
+      }
+
+      if (event.key === "ArrowUp" && prevIndex >= 0) {
+        setActive(special[prevIndex].id);
+        play();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentIndex, active, play]);
+
   return (
     <div className="flex space-x-3 px-6 text-sm">
       <div className="mt-5 w-1/2">
