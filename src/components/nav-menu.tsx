@@ -7,8 +7,7 @@ import useSound from "use-sound";
 
 import { cn } from "@/lib/utils";
 
-const pipboyRotaryVertical_01 =
-  "/sounds/BurstStatic/UI_PipBoy_RotaryVertical_01.mp3";
+const pipboyRotaryVertical_01 = "/sounds/UI_PipBoy_RotaryVertical_01.mp3";
 const sounds = [
   "/sounds/BurstStatic/UI_PipBoy_BurstStatic_01.mp3",
   "/sounds/BurstStatic/UI_PipBoy_BurstStatic_02.mp3",
@@ -22,7 +21,7 @@ const sounds = [
 ];
 
 const LINKS = [
-  { href: "/", label: "STATUS" },
+  { href: "/stat", label: "STAT" },
   { href: "/experience", label: "EXP" },
   { href: "/data", label: "DATA" },
   { href: "/map", label: "MAP" },
@@ -56,7 +55,7 @@ export const NavMenu = () => {
         <div className="bg-primary absolute bottom-0 left-0 h-0.5 w-[38px]" />
         <div className="bg-primary absolute bottom-0 right-0 h-0.5 w-[37px]" />
         {LINKS.map(({ href, label }) => {
-          const isActive = pathname === href;
+          const isActive = pathname.startsWith(href);
           return (
             <Link
               key={href}
@@ -72,7 +71,7 @@ export const NavMenu = () => {
               })}
             >
               <span
-                className={cn("px-2", {
+                className={cn("px-2.5 font-bold", {
                   "pipboy-nav-menu-item": isActive,
                 })}
               >

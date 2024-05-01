@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #18dc0c;
+  --secondary: #222222;
+}
+
 @layer utilities {
   .pipboy-screen {
     /*background-image: radial-gradient(#313630, #111);*/
@@ -81,6 +86,18 @@
     border-top: 2px solid;
     border-left: 2px solid;
     border-right: 2px solid;
+  }
+
+  .embla__container {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y;
+    margin-left: 0;
+  }
+
+  .embla__slide {
+    flex: 0 0 auto;
+    min-width: 0;
   }
 
 }
