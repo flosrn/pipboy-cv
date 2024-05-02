@@ -27,7 +27,7 @@ export default function RootLayout({
         <div className="flex min-h-screen justify-center bg-[#10170f]">
           <div className="relative mt-20 h-[777px] w-full max-w-5xl xl:h-[900px] xl:max-w-6xl">
             <Image
-              src="/images/Pip-Boy Overlay.png"
+              src="/images/pipboy/PipBoyOverlay.png"
               alt="PipBoy overlay"
               layout="fill"
               objectFit="cover"
@@ -35,20 +35,44 @@ export default function RootLayout({
             />
           </div>
 
-          <div className="text-primary pipboy-screen absolute left-0 top-[125px] z-10 mr-3 mt-16 flex h-[350px] w-[395px] flex-col overflow-hidden lg:left-auto xl:w-[500px]">
+          <div className="text-primary pipboy-screen absolute left-0 top-[125px] z-10 mr-3 mt-16 flex h-[350px] w-[395px] flex-col overflow-hidden lg:left-auto xl:top-[150px] xl:h-[400px] xl:w-[500px]">
             <NavMenu />
             <div className="text-primary relative h-full">{children}</div>
             <Image
-              src="/images/PipBoyCrackedScreen.png"
+              src="/images/pipboy/PipBoyScreenLayer12.png"
               alt="PipBoy cracked screen"
               layout="fill"
-              className="pointer-events-none opacity-40"
+              className="pointer-events-none opacity-100"
+            />
+            <Image
+              src="/images/pipboy/PipBoyScreenDirt.png"
+              alt="PipBoy cracked screen"
+              layout="fill"
+              className="pointer-events-none opacity-80"
+            />
+            <Image
+              src="/images/pipboy/PipBoyScreenFingerprint.png"
+              alt="PipBoy cracked screen"
+              layout="fill"
+              className="pointer-events-none opacity-100"
             />
             {/*<Image*/}
-            {/*  src="/images/PipBoySmudgedScreen.png"*/}
+            {/*  src="/images/pipboy/PipBoyScreenCracks_01.png"*/}
+            {/*  alt="PipBoy cracked screen"*/}
+            {/*  layout="fill"*/}
+            {/*  className="pointer-events-none opacity-80"*/}
+            {/*/>*/}
+            <Image
+              src="/images/pipboy/PipBoyScreenCracks_02.png"
+              alt="PipBoy cracked screen"
+              layout="fill"
+              className="pointer-events-none opacity-80"
+            />
+            {/*<Image*/}
+            {/*  src="/images/pipboy/PipBoyScreenSmudged.png"*/}
             {/*  alt="PipBoy smudged screen"*/}
             {/*  layout="fill"*/}
-            {/*  className="pointer-events-none opacity-50"*/}
+            {/*  className="pointer-events-none opacity-30"*/}
             {/*/>*/}
             <div className="pipboy-screen-shadow" />
           </div>

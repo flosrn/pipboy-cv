@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#18dc0c",
-        secondary: "#11291b",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        background: "var(--background)",
       },
       keyframes: {
         wave: {

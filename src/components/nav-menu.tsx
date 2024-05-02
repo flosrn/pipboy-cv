@@ -75,7 +75,7 @@ export const NavMenu = () => {
                   "pipboy-nav-menu-item": isActive,
                 })}
               >
-                <span className="relative bg-[#222222]">{label}</span>
+                <span className="bg-background relative">{label}</span>
               </span>
             </Link>
           );

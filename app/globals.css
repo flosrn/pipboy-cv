@@ -5,12 +5,14 @@
 :root {
   --primary: #18dc0c;
   --secondary: #222222;
+  --background: #002b00;
 }
 
 @layer utilities {
   .pipboy-screen {
     /*background-image: radial-gradient(#313630, #111);*/
-    background: #222222;
+    /*background: #001c00;*/
+    background: var(--background);
     /*@apply animate-color-pulse;*/
   }
 
@@ -27,19 +29,19 @@
   }
 
 
-  .pipboy-screen::after {
-    background-image: linear-gradient(transparent, transparent 3px, #222);
-    background-size: 4px 4px;
-    opacity: .2;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    z-index: 2;
-  }
+  /*.pipboy-screen::after {*/
+  /*  background-image: linear-gradient(transparent, transparent 3px, #222);*/
+  /*  background-size: 4px 4px;*/
+  /*  opacity: .4;*/
+  /*  left: 0;*/
+  /*  top: 0;*/
+  /*  bottom: 0;*/
+  /*  right: 0;*/
+  /*  content: "";*/
+  /*  pointer-events: none;*/
+  /*  position: absolute;*/
+  /*  z-index: 2;*/
+  /*}*/
 
   .pipboy-screen-shadow {
     position: absolute;
@@ -47,7 +49,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: 0 -5px 50px 20px #000 inset;
+    box-shadow: 0 -5px 40px 10px #000 inset;
     pointer-events: none;
   }
 
