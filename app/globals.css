@@ -105,4 +105,28 @@
   .special-filter {
     filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg) saturate(1000%) contrast(0.8);
   }
+
+  .settings-modal::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -5px;
+    width: 10px;
+    height: 90%;;
+    z-index: 1;
+    background: black;
+    @apply backdrop-blur-md;
+  }
+
+  .settings-modal::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -5px;
+    width: 10px;
+    height: 90%;;
+    z-index: 1;
+    background: black;
+    @apply backdrop-blur-md;
+  }
 }

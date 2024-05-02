@@ -4,12 +4,12 @@ import Image from "next/image";
 
 import { NavMenu } from "@/components/nav-menu";
 
-import pipboyOverlay from "../public/images/pipboy/PipBoyOverlay.png";
-
 import "./globals.css";
 
 import { PowerButton } from "@/components/power-button";
+import { Screen } from "@/components/screen";
 import { ScreenOverlays } from "@/components/screen-overlays";
+import { SettingsButton } from "@/components/settings-button";
 
 const firaMono = Fira_Mono({
   weight: ["400", "500", "700"],
@@ -30,9 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={firaMono.className}>
         <div className="flex min-h-screen justify-center overflow-hidden bg-black">
-          <div className="pointer-events-none relative z-10 mt-20 h-[777px] w-full max-w-5xl xl:h-[900px] xl:max-w-6xl">
+          <div className="pointer-events-none relative z-50 mt-20 h-[777px] w-full max-w-5xl xl:h-[900px] xl:max-w-6xl">
             <Image
-              src={pipboyOverlay}
+              src="/images/pipboy/PipBoyOverlay.png"
               alt="PipBoy overlay"
               fill
               priority
@@ -41,18 +41,19 @@ export default function RootLayout({
             />
           </div>
 
-          <div className="text-primary pipboy-screen absolute left-0 top-[125px] z-0 mt-16 flex h-[350px] w-full flex-col overflow-hidden min-[380px]:w-[395px] lg:left-auto xl:top-[150px] xl:h-[400px] xl:w-[500px]">
+          <Screen className="text-primary pipboy-screen overflow-hidden">
             <NavMenu />
             <div className="text-primary relative h-full select-none">
               {children}
             </div>
             <div className="pipboy-screen-shadow" />
-          </div>
+            <SettingsButton />
+          </Screen>
 
-          <div className="pointer-events-none absolute left-0 top-[125px] mt-16 flex h-[350px] w-full flex-col min-[380px]:w-[395px] lg:left-auto xl:top-[150px] xl:h-[400px] xl:w-[500px]">
+          <Screen className="pointer-events-none z-30">
             <PowerButton />
             <ScreenOverlays />
-          </div>
+          </Screen>
         </div>
       </body>
     </html>

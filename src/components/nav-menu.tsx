@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import useSound from "use-sound";
 
+import { SettingsButton } from "@/components/settings-button";
 import { cn } from "@/lib/utils";
 
 const pipboyRotaryVertical_01 = "/sounds/UI_PipBoy_RotaryVertical_01.mp3";
@@ -46,8 +47,15 @@ export const NavMenu = () => {
     }
   }, [playAnimation]);
 
+  const onLinkClick = () => {
+    setPlayAnimation(true);
+    play01();
+    setTimeout(() => play02(), 100);
+    setTimeout(() => setPlayAnimation(false), 300);
+  };
+
   return (
-    <div className={cn("mt-7 w-full px-5", {})}>
+    <div className={cn("relative mt-2 w-full px-5", {})}>
       {playAnimation && (
         <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-full backdrop-blur-[0.9px]" />
       )}
@@ -60,12 +68,7 @@ export const NavMenu = () => {
             <Link
               key={href}
               href={href}
-              onClick={() => {
-                setPlayAnimation(true);
-                play01();
-                setTimeout(() => play02(), 100);
-                setTimeout(() => setPlayAnimation(false), 300);
-              }}
+              onClick={onLinkClick}
               className={cn("text-primary relative", {
                 "border-primary border-b-2": !isActive,
               })}

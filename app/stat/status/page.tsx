@@ -10,7 +10,7 @@ export default function StatusPage() {
         height={146}
         className="absolute inset-0 left-1/2 top-5 -translate-x-1/2 transform"
       />
-      <div className="absolute bottom-12 left-0 w-full">
+      <div className="absolute bottom-10 left-0 w-full">
         <div className="mb-1 flex items-center justify-center">
           Florian SERAN
         </div>
