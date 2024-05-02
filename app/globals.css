@@ -5,7 +5,7 @@
 :root {
   --primary: #18dc0c;
   --secondary: #255024;
-  --background: #1e281b;
+  --background: #000;
 }
 
 @layer utilities {
