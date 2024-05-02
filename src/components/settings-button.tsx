@@ -45,7 +45,7 @@ export const SettingsButton = (props: SettingsButtonProps) => {
                     <h1 className="text-primary absolute left-1/2 top-[-10px] flex w-[60%] -translate-x-1/2 transform justify-center bg-black">
                       SETTINGS
                     </h1>
-                    <div className="text-primary mt-3 w-full px-3">
+                    <div className="text-primary mt-3 w-full px-2">
                       <SettingsMenu />
                     </div>
                   </div>
