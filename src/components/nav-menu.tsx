@@ -47,7 +47,7 @@ export const NavMenu = () => {
   }, [playAnimation]);
 
   return (
-    <div className={cn("mt-5 w-full px-5", {})}>
+    <div className={cn("mt-7 w-full px-5", {})}>
       {playAnimation && (
         <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-full backdrop-blur-[0.9px]" />
       )}

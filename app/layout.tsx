@@ -31,13 +31,25 @@ export default function RootLayout({
               alt="PipBoy overlay"
               layout="fill"
               objectFit="cover"
-              className="pointer-events-none z-50 object-[-200px] lg:object-[100px]"
+              className="pointer-events-none z-50 object-[-220px] lg:object-[100px]"
             />
           </div>
 
-          <div className="text-primary pipboy-screen absolute left-0 top-[125px] z-10 mr-3 mt-20 flex h-[350px] w-[395px] flex-col overflow-hidden lg:left-auto lg:h-[400px] xl:w-[500px]">
+          <div className="text-primary pipboy-screen absolute left-0 top-[125px] z-10 mr-3 mt-16 flex h-[350px] w-[395px] flex-col overflow-hidden lg:left-auto xl:w-[500px]">
             <NavMenu />
-            <div className="text-primary relative">{children}</div>
+            <div className="text-primary relative h-full">{children}</div>
+            <Image
+              src="/images/PipBoyCrackedScreen.png"
+              alt="PipBoy cracked screen"
+              layout="fill"
+              className="pointer-events-none opacity-40"
+            />
+            {/*<Image*/}
+            {/*  src="/images/PipBoySmudgedScreen.png"*/}
+            {/*  alt="PipBoy smudged screen"*/}
+            {/*  layout="fill"*/}
+            {/*  className="pointer-events-none opacity-50"*/}
+            {/*/>*/}
             <div className="pipboy-screen-shadow" />
           </div>
         </div>

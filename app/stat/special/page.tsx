@@ -94,7 +94,7 @@ export default function SpecialPage() {
 
   return (
     <div className="flex space-x-3 px-6 text-sm">
-      <div className="mt-5 w-1/2">
+      <div className="mt-2 w-1/2">
         {special.map(({ id, name, value }) => (
           <div
             key={id}
@@ -122,7 +122,7 @@ export default function SpecialPage() {
               className="special-filter"
             />
             <div className="mt-2">
-              <p className="">{activeItem.description}</p>
+              <p className="text-xs">{activeItem.description}</p>
             </div>
           </div>
         )}
