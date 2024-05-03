@@ -55,13 +55,13 @@ export const NavMenu = () => {
   };
 
   return (
-    <div className={cn("relative mt-2 w-full px-5", {})}>
+    <div className={cn("relative mt-2 w-full px-5 xl:mt-5 xl:px-14", {})}>
       {playAnimation && (
         <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-full backdrop-blur-[0.9px]" />
       )}
       <nav className="pipboy-nav relative flex w-full justify-center">
-        <div className="bg-primary absolute bottom-0 left-0 h-0.5 w-[38px]" />
-        <div className="bg-primary absolute bottom-0 right-0 h-0.5 w-[37px]" />
+        <div className="bg-primary absolute bottom-0 left-0 h-0.5 w-[38px] xl:w-[55px]" />
+        <div className="bg-primary absolute bottom-0 right-0 h-0.5 w-[37px] xl:w-[55px]" />
         {LINKS.map(({ href, label }) => {
           const isActive = pathname.startsWith(href);
           return (

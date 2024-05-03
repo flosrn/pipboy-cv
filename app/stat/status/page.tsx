@@ -6,11 +6,11 @@ import webAppLogo from "../../../public/images/icons/Logo_app_web.png";
 
 export default function StatusPage() {
   return (
-    <div className="item-center relative flex h-full justify-center text-xs">
+    <div className="item-center relative flex h-full justify-center text-xs xl:mt-8">
       <div className="bg-primary absolute left-1/2 top-1.5 h-1.5 w-6 -translate-x-1/2 transform" />
       <div className="bg-primary absolute left-32 top-14 h-1.5 w-6 -translate-x-1/2 transform" />
       <div className="bg-primary absolute right-24 top-14 h-1.5 w-6 -translate-x-1/2 transform" />
-      <div className="bg-primary absolute bottom-32 left-1/2 h-1.5 w-6 -translate-x-1/2 transform" />
+      <div className="bg-primary absolute bottom-32 left-1/2 h-1.5 w-6 -translate-x-1/2 transform xl:bottom-48" />
       <div className="bg-primary absolute left-32 top-28 h-1.5 w-6 -translate-x-1/2 transform" />
       <div className="bg-primary absolute right-24 top-28 h-1.5 w-6 -translate-x-1/2 transform" />
       <Image
@@ -20,7 +20,7 @@ export default function StatusPage() {
         height={123}
         className="absolute inset-0 left-1/2 top-5 h-auto -translate-x-1/2 transform"
       />
-      <div className="absolute bottom-9 left-0 w-full">
+      <div className="absolute bottom-9 left-0 w-full xl:bottom-[85px]">
         <div className="mb-2 flex h-8 items-center justify-center">
           <div className="bg-secondary flex flex-col items-center p-0.5">
             <Image src={webAppLogo} alt="web app" className="h-7 w-7" />

@@ -45,7 +45,7 @@ export default function RootLayout({
 
           <Screen className="text-primary pipboy-screen overflow-hidden">
             <NavMenu />
-            <div className="text-primary relative h-full select-none">
+            <div className="text-primary relative h-full select-none xl:px-8">
               {children}
             </div>
             <div className="pipboy-screen-shadow" />

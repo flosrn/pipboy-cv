@@ -16,7 +16,7 @@ export const PowerButton = () => {
         <video
           autoPlay={startVideo}
           onEnded={() => setStartVideo(false)}
-          className="absolute inset-0 z-0 h-full w-full object-cover py-4"
+          className="absolute inset-0 z-0 h-full w-full object-cover xl:py-4"
         >
           <source src="/videos/Startup video.mp4" type="video/mp4" />
         </video>

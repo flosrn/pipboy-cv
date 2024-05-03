@@ -10,10 +10,7 @@
 
 @layer utilities {
   .pipboy-screen {
-    /*background-image: radial-gradient(#313630, #111);*/
-    /*background: #001c00;*/
     background: var(--background);
-    /*@apply animate-color-pulse;*/
   }
 
   .pipboy-screen::before {
@@ -130,3 +127,5 @@
     @apply backdrop-blur-md;
   }
 }
+
+
