@@ -6,6 +6,8 @@ import { NavMenu } from "@/components/nav-menu";
 
 import "./globals.css";
 
+import Head from "next/head";
+
 import { PowerButton } from "@/components/power-button";
 import { Screen } from "@/components/screen";
 import { ScreenOverlays } from "@/components/screen-overlays";
