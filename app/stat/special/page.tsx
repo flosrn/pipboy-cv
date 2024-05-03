@@ -13,7 +13,7 @@ const special = [
     id: 1,
     name: "Strength",
     description:
-      "Strength is the ability to move heavy objects. It is the most important attribute for a warrior.",
+      "A la force d'un super mutant, il peut soulever un ordinateur à lui tout seul et le jeter par la fenêtre en cas de bug trop persistant.",
     value: 8,
     picture: "/images/special/strength.gif",
   },
@@ -21,39 +21,39 @@ const special = [
     id: 2,
     name: "Perception",
     description:
-      "Perception is the ability to see things. It is important for a sniper.",
-    value: 5,
+      "Détecte les erreurs plus vite que son ombre, dispose d'un radar à fermetures de balises manquantes dernier cri.",
+    value: 7,
     picture: "/images/special/perception.gif",
   },
   {
     id: 3,
     name: "Endurance",
     description:
-      "Endurance is the ability to withstand physical stress. It is important for a tank.",
-    value: 7,
+      "Capable de coder pendant 12 heures sans s'arrêter sur fond de musique techno si on lui donne assez de litres de café.",
+    value: 6,
     picture: "/images/special/endurance.gif",
   },
   {
     id: 4,
     name: "Charisma",
     description:
-      "Charisma is the ability to influence people. It is important for a leader.",
-    value: 3,
+      "A le charisme d'une goule sauvage, mais il sait se montrer convaincant quand il s'agit de proposer de nouvelles technos.",
+    value: 4,
     picture: "/images/special/charisma.gif",
   },
   {
     id: 5,
     name: "Intelligence",
     description:
-      "Intelligence is the ability to solve problems. It is important for a scientist.",
-    value: 9,
+      "Presque aussi intelligent que ChatGPT, il a le cerveau d'un super ordinateur mais pas la puissance de calcul. Rêve de code même la nuit.",
+    value: 7,
     picture: "/images/special/intelligence.gif",
   },
   {
     id: 6,
     name: "Agility",
     description:
-      "Agility is the ability to move quickly. It is important for a thief.",
+      "Aussi agile qu'un chat, il peut coder en équilibre sur une branche d'arbre et il jongle avec les frameworks JS comme personne.",
     value: 6,
     picture: "/images/special/agility.gif",
   },
@@ -61,8 +61,8 @@ const special = [
     id: 7,
     name: "Luck",
     description:
-      "Luck is the ability to get lucky. It is important for a gambler.",
-    value: 10,
+      "A tout juste assez de chance pour que son code compile du premier coup, mais pas assez pour que ses investissements en crypto lui rapportent des millions.",
+    value: 3,
     picture: "/images/special/luck.gif",
   },
 ];
