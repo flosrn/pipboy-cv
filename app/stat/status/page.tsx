@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import { Icons } from "@/components/icons";
 
+import webAppLogo from "../../../public/images/icons/Logo_app_web.png";
+
 export default function StatusPage() {
   return (
     <div className="item-center relative flex h-full justify-center text-xs">
@@ -15,23 +17,19 @@ export default function StatusPage() {
         src="/images/Vaultboy_01.gif"
         alt="Vaultboy"
         width={88}
-        height={146}
-        className="absolute inset-0 left-1/2 top-5 -translate-x-1/2 transform"
+        height={123}
+        className="absolute inset-0 left-1/2 top-5 h-auto -translate-x-1/2 transform"
       />
       <div className="absolute bottom-9 left-0 w-full">
         <div className="mb-2 flex h-8 items-center justify-center">
           <div className="bg-secondary flex flex-col items-center p-0.5">
-            <img
-              src="/images/icons/Logo_app_web.png"
-              alt="web app"
-              className="h-7 w-7"
-            />
+            <Image src={webAppLogo} alt="web app" className="h-7 w-7" />
           </div>
           <div className="bg-secondary ml-1 flex flex-col items-center p-0.5">
             <Icons.react />
             <span className="text-xs">85</span>
           </div>
-          <div className="bg-secondary ml-2 flex h-full items-center justify-center p-0.5">
+          <div className="bg-secondary ml-2.5 flex h-full items-center justify-center p-0.5">
             <Icons.typescript />
           </div>
           <div className="bg-secondary ml-1 flex flex-col items-center p-0.5">

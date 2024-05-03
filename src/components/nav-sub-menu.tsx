@@ -48,6 +48,8 @@ export const NavSubMenu = () => {
         <div className="embla__container space-x-2">
           {SUB_LINKS.map(({ href, label }, index) => {
             const isActive = pathname === href;
+            const i = emblaApi?.selectedScrollSnap();
+            console.log(i);
             return (
               <Link
                 key={label}
@@ -58,6 +60,10 @@ export const NavSubMenu = () => {
                 href={href}
                 className={cn("embla__slide text-sm", {
                   "font-semibold": isActive,
+                  "opacity-70":
+                    !isActive && (i === index - 1 || i === index + 1),
+                  "opacity-30":
+                    !isActive && (i === index - 2 || i === index + 2),
                 })}
               >
                 {label}
