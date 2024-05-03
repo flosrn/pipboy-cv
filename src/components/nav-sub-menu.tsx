@@ -60,7 +60,7 @@ export const NavSubMenu = () => {
                 href={href}
                 className={cn("embla__slide text-sm", {
                   "font-semibold": isActive,
-                  "opacity-70":
+                  "opacity-60":
                     !isActive && (i === index - 1 || i === index + 1),
                   "opacity-30":
                     !isActive && (i === index - 2 || i === index + 2),
