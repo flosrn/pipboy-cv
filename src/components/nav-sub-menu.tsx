@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import useEmblaCarousel from "embla-carousel-react";
@@ -19,9 +19,14 @@ const SUB_LINKS = [
 export const NavSubMenu = () => {
   const pathname = usePathname();
   const router = useRouter();
+  const [activeIndex] = useState(() => {
+    const index = SUB_LINKS.findIndex(({ href }) => href === pathname);
+    return index === -1 ? 0 : index;
+  });
   const [play] = useSound(pipboyRotaryHorizontal_02);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
+    startIndex: activeIndex,
     containScroll: false,
   });
 
@@ -49,7 +54,6 @@ export const NavSubMenu = () => {
           {SUB_LINKS.map(({ href, label }, index) => {
             const isActive = pathname === href;
             const i = emblaApi?.selectedScrollSnap();
-            console.log(i);
             return (
               <Link
                 key={label}

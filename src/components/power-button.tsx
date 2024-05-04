@@ -1,23 +1,38 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import useSound from "use-sound";
 
 import { useBootSequence } from "@/store/use-boot-sequence";
 
-const openSound = "/sounds/UI_General_OK.mp3";
+const bootSound = "/sounds/BurstStatic/UI_PipBoy_BurstStatic_02.mp3";
 
 export const PowerButton = () => {
-  const [bootSequence, setStartBootSequence] = useBootSequence((state) => [
+  const [
+    bootSequence,
+    setStartBootSequence,
+    bootSequenceVideoFinished,
+    setBootSequenceVideoFinished,
+  ] = useBootSequence((state) => [
     state.bootSequence,
     state.setStartBootSequence,
+    state.bootSequenceVideoFinished,
+    state.setBootSequenceVideoFinished,
   ]);
-  const [playClick] = useSound(openSound);
+  const [playBoot] = useSound(bootSound);
 
-  const handlePowerButton = () => {
-    playClick();
-    setStartBootSequence(true);
-  };
+  useEffect(() => {
+    if (bootSequenceVideoFinished) {
+      const element = document.querySelector(".pipboy-screen");
+      if (element) {
+        element.classList.add("animate-boot");
+        element.classList.remove("invisible");
+        setTimeout(() => {
+          element.classList.remove("animate-boot");
+        }, 500);
+      }
+    }
+  }, [bootSequenceVideoFinished]);
 
   return (
     <>
@@ -25,18 +40,17 @@ export const PowerButton = () => {
       {bootSequence && (
         <video
           autoPlay={bootSequence}
-          onEnded={() => setStartBootSequence(false)}
+          onEnded={() => {
+            setStartBootSequence(false);
+            playBoot();
+            setBootSequenceVideoFinished(true);
+            setTimeout(() => setBootSequenceVideoFinished(false), 2000);
+          }}
           className="absolute inset-0 z-0 h-full w-full object-cover xl:py-4"
         >
           <source src="/videos/Startup video.mp4" type="video/mp4" />
         </video>
       )}
-      <div className="absolute bottom-[-110px] right-0 z-50 size-14">
-        <button
-          onClick={handlePowerButton}
-          className="pointer-events-auto h-full w-full"
-        />
-      </div>
     </>
   );
 };

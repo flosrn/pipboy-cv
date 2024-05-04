@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useSound from "use-sound";
 
 import {
@@ -15,15 +15,32 @@ import { cn } from "@/lib/utils";
 import { useBootSequence } from "@/store/use-boot-sequence";
 
 const openSound = "/sounds/UI_General_OK.mp3";
+const bootSound02 = "/sounds/BurstStatic/UI_PipBoy_BurstStatic_05.mp3";
 
 export type BottomButtonsBarProps = {};
 
 export const BottomButtonsBar = (props: BottomButtonsBarProps) => {
+  const [startRebot, setStartReboot] = useState(false);
   const [playClick] = useSound(openSound);
+  const [playBoot02] = useSound(bootSound02);
+
   const [bootSequence, setStartBootSequence] = useBootSequence((state) => [
     state.bootSequence,
     state.setStartBootSequence,
   ]);
+
+  useEffect(() => {
+    if (startRebot) {
+      const element = document.querySelector(".pipboy-screen");
+      if (element) {
+        element.classList.add("animate-boot");
+        setTimeout(() => {
+          element.classList.remove("animate-boot");
+          element.classList.add("invisible");
+        }, 300);
+      }
+    }
+  }, [startRebot]);
 
   return (
     <div className="bg-secondary text-primary fixed bottom-3 left-1/2 z-50 -translate-x-1/2 transform">
@@ -32,7 +49,12 @@ export const BottomButtonsBar = (props: BottomButtonsBarProps) => {
           disabled={bootSequence}
           onClick={() => {
             playClick();
-            setStartBootSequence(true);
+            playBoot02();
+            setStartReboot(true);
+            setTimeout(() => {
+              setStartBootSequence(true);
+              setStartReboot(false);
+            }, 2000);
           }}
           className={cn({ "opacity-50": bootSequence })}
         >

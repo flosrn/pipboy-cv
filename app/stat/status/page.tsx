@@ -41,9 +41,7 @@ export default function StatusPage() {
             <span className="text-xs">90</span>
           </div>
         </div>
-        <div className="mb-2 flex items-center justify-center">
-          Florian SERAN
-        </div>
+        <div className="mb-2 flex items-center justify-center">Flosrn</div>
         <div className="flex items-center space-x-1 px-8">
           <div className="bg-secondary px-1 pr-6">HP 90/90</div>
           <div className="item-center bg-secondary flex flex-1 items-center space-x-2 px-1">
