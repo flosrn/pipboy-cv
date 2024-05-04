@@ -1,17 +1,16 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Fira_Mono } from "next/font/google";
 import Image from "next/image";
 
+import { BottomButtonsBar } from "@/components/bottom-buttons-bar";
 import { NavMenu } from "@/components/nav-menu";
-
-import "./globals.css";
-
-import Head from "next/head";
-
 import { PowerButton } from "@/components/power-button";
 import { Screen } from "@/components/screen";
 import { ScreenOverlays } from "@/components/screen-overlays";
-import { SettingsButton } from "@/components/settings-button";
+import { SettingsDialog } from "@/components/settings-dialog";
+
+import "./globals.css";
 
 const firaMono = Fira_Mono({
   weight: ["400", "500", "700"],
@@ -49,7 +48,7 @@ export default function RootLayout({
               {children}
             </div>
             <div className="pipboy-screen-shadow" />
-            <SettingsButton />
+            <SettingsDialog />
           </Screen>
 
           <Screen className="pointer-events-none z-30">
@@ -57,6 +56,7 @@ export default function RootLayout({
             <ScreenOverlays />
           </Screen>
         </div>
+        <BottomButtonsBar />
       </body>
     </html>
   );

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import useSound from "use-sound";
 
-import { SettingsButton } from "@/components/settings-button";
+import { SettingsDialog } from "@/components/settings-dialog";
 import { cn } from "@/lib/utils";
 
 const pipboyRotaryVertical_01 = "/sounds/UI_PipBoy_RotaryVertical_01.mp3";
