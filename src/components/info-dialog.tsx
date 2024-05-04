@@ -61,7 +61,7 @@ export const InfoDialog = (props: InfoButtonProps) => {
                 Pipboy themed interactive CV. The project is open source and
                 available on{" "}
                 <a
-                  href="https://github.com/flosrn/pipby-cv"
+                  href="https://github.com/flosrn/pipboy-cv"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline"
