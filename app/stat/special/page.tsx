@@ -6,7 +6,7 @@ import useSound from "use-sound";
 
 import { cn } from "@/lib/utils";
 
-const pipboyFavoriteMenu = "/sounds/UI_PipBoy_Favorite_Menu_Up_01.mp3";
+const pipboyFavoriteMenu = "/sounds/UI_General_Focus.mp3";
 
 const special = [
   {
