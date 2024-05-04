@@ -28,16 +28,16 @@ export const InfoDialog = (props: InfoButtonProps) => {
       open={infoDialogOpen}
       onOpenChange={setInfoDialogOpen}
     >
-      <DialogTrigger asChild>
-        <button className="bg-secondary absolute left-8 top-3 xl:left-16 xl:top-6">
-          <Image
-            src="/images/icons/Gear.png"
-            alt="PipBoy screen top left"
-            width={15}
-            height={15}
-          />
-        </button>
-      </DialogTrigger>
+      {/*<DialogTrigger asChild>*/}
+      {/*  <button className="bg-secondary absolute left-8 top-3 xl:left-16 xl:top-6">*/}
+      {/*    <Image*/}
+      {/*      src="/images/icons/Gear.png"*/}
+      {/*      alt="PipBoy screen top left"*/}
+      {/*      width={15}*/}
+      {/*      height={15}*/}
+      {/*    />*/}
+      {/*  </button>*/}
+      {/*</DialogTrigger>*/}
       <DialogContent>
         <DialogHeader>
           <DialogTitle>INFO</DialogTitle>
