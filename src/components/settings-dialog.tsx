@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 import { SettingsMenu } from "@/components/settings-menu";
+import { useSettingsDialog } from "@/store/use-settings-dialog";
 
 import {
   Dialog,
@@ -16,8 +17,16 @@ import {
 export type SettingsButtonProps = {};
 
 export const SettingsDialog = (props: SettingsButtonProps) => {
+  const [settingsDialogOpen, setSettingsDialogOpen] = useSettingsDialog(
+    (state) => [state.settingsDialogOpen, state.setSettingsDialogOpen]
+  );
+
   return (
-    <Dialog modal={false}>
+    <Dialog
+      modal={false}
+      open={settingsDialogOpen}
+      onOpenChange={setSettingsDialogOpen}
+    >
       <DialogTrigger asChild>
         <button className="bg-secondary absolute left-8 top-3 xl:left-16 xl:top-6">
           <Image

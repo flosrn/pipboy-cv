@@ -126,6 +126,30 @@
     background: black;
     @apply backdrop-blur-md;
   }
+
+  .bottom-buttons-bar::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    width: 98%;
+    height: 1px;
+    background: var(--secondary);
+  }
+
+  .bottom-buttons-bar::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    width: 98%;
+    height: 1px;
+    background: var(--secondary);
+  }
 }
 
 

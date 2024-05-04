@@ -12,6 +12,8 @@ import { SettingsDialog } from "@/components/settings-dialog";
 
 import "./globals.css";
 
+import { InfoDialog } from "@/components/info-dialog";
+
 const firaMono = Fira_Mono({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
@@ -49,6 +51,7 @@ export default function RootLayout({
             </div>
             <div className="pipboy-screen-shadow" />
             <SettingsDialog />
+            <InfoDialog />
           </Screen>
 
           <Screen className="pointer-events-none z-30">
